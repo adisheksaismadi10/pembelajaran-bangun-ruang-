@@ -257,18 +257,29 @@
         }
 
         .materi-image {
-            width: 100%;
-            max-width: 400px;
+            width: 500px;
             height: 300px;
-            background: #e0e0e0;
+            max-width: 100%;
+            max-height: 600px;
+            background: white;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 20px auto;
             border: 3px solid #667eea;
-            color: #666;
+            color:white;
             font-size: 1.1rem;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .materi-image img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 500px;
+            height: 300px;
+            object-fit: contain;
         }
 
         .rumus-box {
@@ -486,6 +497,207 @@
                 height: 300px;
             }
         }
+
+
+        .profil-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 24px 56px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profil-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.22);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .profil-card-header h2 {
+            color: #fff;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: normal;
+            margin-top: 0;
+        }
+
+        .profil-avatar-wrap {
+            position: absolute;
+            bottom: -54px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .profil-avatar-ring {
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            padding: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            background: #e0d0f0;
+        }
+
+        .profil-card-body {
+            padding: 68px 30px 32px;
+            text-align: center;
+        }
+
+        .profil-name {
+            font-size: 1.55rem;
+            font-weight: bold;
+            color: #3a2d6e;
+            margin-bottom: 4px;
+            line-height: 1.25;
+        }
+
+        .profil-role {
+            display: inline-block;
+            background: linear-gradient(135deg, #f0eafa, #e4d8f7);
+            border: 2px solid #c9b8f0;
+            color: #5a3fa0;
+            font-size: 0.88rem;
+            font-weight: bold;
+            padding: 5px 18px;
+            border-radius: 50px;
+            margin: 10px 0 22px;
+        }
+
+        .profil-divider {
+            border: none;
+            border-top: 2.5px dashed #e8d5b7;
+            margin: 0 0 22px;
+        }
+
+        .profil-bio {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            text-align: left;
+            background: #f9f3e8;
+            border-radius: 16px;
+            border: 2px solid #e8d5b7;
+            padding: 16px 18px;
+            margin-bottom: 24px;
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        .profil-bio::before {
+            content: '\201C';
+            font-size: 3.5rem;
+            color: #c9b8f0;
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .profil-bio p {
+            padding-left: 8px;
+            margin: 0 0 8px 0;
+        }
+
+        .profil-info-row {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .profil-info-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border: 2px solid #e8d5b7;
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .profil-info-chip svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            color: #764ba2;
+        }
+
+        .profil-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.35);
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .profil-back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 28px rgba(102, 126, 234, 0.45);
+        }
+
+        .profil-back-btn:active { 
+            transform: scale(0.97); 
+        }
+
+        .profil-back-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .profil-stars {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            display: flex;
+            gap: 4px;
+            opacity: 0.5;
+        }
+
+        .profil-stars span {
+            font-size: 0.7rem;
+            color: #FFD700;
+        }
+
+        @media (max-width: 480px) {
+            #profil-page { padding: 30px 16px 50px; }
+            .profil-card-body { padding: 68px 20px 28px; }
+            .profil-name { font-size: 1.3rem; }
+            .profil-back-btn { font-size: 0.95rem; padding: 13px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -508,7 +720,7 @@
     <!-- Home Page -->
     <div id="home-page" class="page container">
         <div class="header">
-            <h1>🎨 Selamat Datang di Pembelajaran Bangun Ruang! </h1>
+            <h1> Selamat Datang di Pembelajaran Bangun Ruang! </h1>
             <p>Mari belajar bangun ruang dengan cara yang menyenangkan dan interaktif!</p>
         </div>
 
@@ -516,19 +728,19 @@
             <h2 style="text-align: center; color: #667eea; margin-bottom: 20px;">Pilih Bangun Ruang yang Ingin Dipelajari</h2>
             <div class="grid-bangun">
                 <div class="card-bangun" onclick="showMateri('kubus')">
-                    <h3> 🎲 Kubus</h3>
+                    <h3>Kubus</h3>
                     <p>Klik untuk belajar!</p>
                 </div>
                 <div class="card-bangun" onclick="showMateri('balok')">
-                    <h3>📺 Balok</h3>
+                    <h3>Balok</h3>
                     <p>Klik untuk belajar!</p>
                 </div>
                 <div class="card-bangun" onclick="showMateri('prisma')">
-                    <h3>🗻 Prisma Segi-n</h3>
+                    <h3>Prisma Segi-n</h3>
                     <p>Klik untuk belajar!</p>
                 </div>
                 <div class="card-bangun" onclick="showMateri('limas')">
-                    <h3>⛺ Limas Segi-n</h3>
+                    <h3>Limas Segi-n</h3>
                     <p>Klik untuk belajar!</p>
                 </div>
             </div>
@@ -543,24 +755,18 @@
         </div>
 
         <div class="content-box">
-            <!-- Gambar dan Jaring-jaring -->
+            <!-- Gambar Bentuk Bangun Ruang -->
             <div class="materi-section">
-                <h2>📸 Gambar dan Jaring-jaring</h2>
-                <h3>Bentuk Bangun Ruang</h3>
+                <h2>Gambar Bentuk Bangun Ruang</h2>
                 <div class="materi-image" id="gambar-bentuk">
                     <!-- GAMBAR BANGUN RUANG DITAMPILKAN DI SINI -->
-                    <p>🖼️ Gambar Bangun Ruang</p>
-                </div>
-                <h3>Jaring-jaring Bangun Ruang</h3>
-                <div class="materi-image" id="gambar-jaring">
-                    <!-- GAMBAR JARING-JARING DITAMPILKAN DI SINI -->
-                    <p>🕸️ Jaring-jaring</p>
+                    <p>Gambar Bangun Ruang</p>
                 </div>
             </div>
 
             <!-- Unsur-unsur -->
             <div class="materi-section">
-                <h2>🔍 Unsur-unsur <span id="bangun-name">Bangun Ruang</span></h2>
+                <h2>Unsur-unsur <span id="bangun-name">Bangun Ruang</span></h2>
                 <div id="unsur-content">
                     <!-- Konten unsur akan diisi dinamis -->
                 </div>
@@ -568,11 +774,11 @@
 
             <!-- Rumus Luas Permukaan -->
             <div class="materi-section">
-                <h2>📏 Rumus Luas Permukaan</h2>
+                <h2>Rumus Luas Permukaan</h2>
                 <div class="rumus-box" id="rumus-luas">
                     <!-- Rumus akan diisi dinamis -->
                 </div>
-                <h3>📝 Contoh Soal & Video Pembelajaran</h3>
+                <h3>Contoh Soal & Video Pembelajaran</h3>
                 <div class="rumus-box" id="contoh-luas">
                     <!-- Contoh soal dan video akan diisi dinamis -->
                 </div>
@@ -580,19 +786,40 @@
 
             <!-- Rumus Volume -->
             <div class="materi-section">
-                <h2>📦 Rumus Volume</h2>
+                <h2>Rumus Volume</h2>
                 <div class="rumus-box" id="rumus-volume">
                     <!-- Rumus akan diisi dinamis -->
                 </div>
-                <h3>📝 Contoh Soal & Video Pembelajaran</h3>
+                <h3>Contoh Soal & Video Pembelajaran</h3>
                 <div class="rumus-box" id="contoh-volume">
                     <!-- Contoh soal dan video akan diisi dinamis -->
                 </div>
             </div>
 
+            <!-- Jaring-jaring Bangun Ruang -->
+            <div class="materi-section">
+                <h2>Jaring-jaring Bangun Ruang</h2>
+                <div class="materi-image" id="gambar-jaring">
+                    <!-- GAMBAR JARING-JARING 1 DITAMPILKAN DI SINI -->
+                    <p>Jaring-jaring</p>
+                </div>
+                <div class="materi-image" id="gambar-jaring2">
+                    <!-- GAMBAR JARING-JARING 2 DITAMPILKAN DI SINI -->
+                    <p>Jaring-jaring</p>
+                </div>
+                <div class="materi-image" id="gambar-jaring3">
+                    <!-- GAMBAR JARING-JARING 3 DITAMPILKAN DI SINI -->
+                    <p>Jaring-jaring</p>
+                </div>
+                <div class="materi-image" id="gambar-jaring4">
+                    <!-- GAMBAR JARING-JARING 4 DITAMPILKAN DI SINI -->
+                    <p>Jaring-jaring</p>
+                </div>
+            </div>
+
             <!-- AR Interaktif -->
             <div class="materi-section ar-section">
-                <h2>🥽 Model 3D Interaktif & AR</h2>
+                <h2>Model 3D Interaktif & AR</h2>
                 <p style="margin-bottom: 15px;">Putar, zoom, dan lihat model dalam Augmented Reality!</p>
                 
                 <model-viewer id="ar-viewer"
@@ -608,27 +835,27 @@
 
                 <div class="ar-controls">
                     <button class="ar-btn" onclick="changeARModel('normal')">
-                        🔲 Tampilkan Model Normal
+                        Tampilkan Model Normal
                     </button>
                     <button class="ar-btn" onclick="changeARModel('transparent')">
-                        🔳 Tampilkan Model Transparan
+                        Tampilkan Model Transparan
                     </button>
                     <button class="ar-btn" onclick="playJaringAnimation()">
-                        🎬 Animasi jaring-jaring
+                        Animasi jaring-jaring
                     </button>
                     <button class="ar-btn camera" onclick="activateAR()">
-                        📱 Buka Kamera AR
+                        Buka Kamera AR
                     </button>
                 </div>
                 
                 <p style="margin-top: 15px; text-align: center; color: #666;">
-                    💡 <strong>Tips:</strong> Gunakan tombol "Buka Kamera AR" untuk melihat bangun ruang di dunia nyata!
+                    <strong>Tips:</strong> Gunakan tombol "Buka Kamera AR" untuk melihat bangun ruang di dunia nyata!
                 </p>
             </div>
 
             <!-- Tombol Mulai Kuis -->
             <button class="start-quiz-btn" onclick="startQuiz()">
-                🎯 Mulai Kuis! Ayo, Uji Pemahamanmu!
+                 Mulai Kuis! Ayo, Uji Pemahamanmu!
             </button>
         </div>
     </div>
@@ -636,7 +863,7 @@
     <!-- Quiz Page -->
     <div id="quiz-page" class="page container">
         <div class="header">
-            <h1>🎯 Kuis Interaktif</h1>
+            <h1>Kuis Interaktif</h1>
             <button class="back-btn" onclick="showPage('materi-page')">⬅️ Kembali ke Materi</button>
         </div>
 
@@ -669,13 +896,19 @@
                 `,
                 contohLuas: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Sebuah kubus memiliki panjang sisi 5 cm. Hitunglah luas permukaannya!</p>
+                    <p>Sebuah kubus memiliki panjang rusuk 5 cm. Hitunglah luas permukaannya!</p>
                     <p><strong>Penyelesaian:</strong></p>
                     <p>Diketahui: r = 5 cm</p>
-                    <p>L = 6 × r²</p>
-                    <p>L = 6 × 5²</p>
-                    <p>L = 6 × 25 cm</p>
-                    <p><strong>L = 150 cm²</strong></p>
+                    <p>LP = 6 × r²</p>
+                    <p>LP = 6 × (5 cm)²</p>
+                    <p>LP = 6 × 25 cm²</p>
+                    <p><strong>LP = 150 cm²</strong></p>
+                    <div class="video-placeholder" style="margin-top: 20px;">
+                        <video controls width="100%" height="300">
+                            <source src="./Aset Video/Luas Kubus.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+                    </div>
                 `,
                 rumusVolume: `
                     <h4>Volume Kubus = r³</h4>
@@ -684,11 +917,11 @@
                 `,
                 contohVolume: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Sebuah kubus memiliki panjang sisi 4 cm. Hitunglah volumenya!</p>
+                    <p>Sebuah kubus memiliki panjang rusuk 4 cm. Hitunglah volumenya!</p>
                     <p><strong>Penyelesaian:</strong></p>
                     <p>Diketahui: r = 4 cm</p>
                     <p>V = r³</p>
-                    <p>V = 4³</p>
+                    <p>V = (4 cm)³</p>
                     <p><strong>V = 64 cm³</strong></p>
                     <div class="video-placeholder">
                         <video controls width="100%" height="300">
@@ -700,8 +933,11 @@
                 // FILE AR MODEL
                 arNormal: "./Aset/Kubus Normal.glb",
                 arTransparent: "./Aset/Kubus Transparan okee.glb",
-                gambar: "./Aset gambar/gambar_kubus.jpeg",
-                gambarJaring: "./Aset gambar/gambar_jaring_jaring_kubus.jpeg",
+                gambar: "./Aset gambar/gambar_kubus.png",
+                gambarJaring: "./Aset gambar/gambar_jaring_jaring_kubus_1.png",
+                gambarJaring2: "./Aset gambar/gambar_jaring_jaring_kubus_2.png",
+                gambarJaring3: "./Aset gambar/gambar_jaring_jaring_kubus_3.png",
+                gambarJaring4: "./Aset gambar/gambar_jaring_jaring_kubus_4.png",
                 animasiJaring: "./Aset animasi/animasi jaring jaring kubus.glb"
             },
             balok: {
@@ -719,21 +955,21 @@
                 `,
                 rumusLuas: `
                     <h4>Luas Permukaan Balok =  2×((p×l)+(p×t)+(t×l))</h4>
-                    <h4>p = Panjang sisi balok</h4>
-                    <h4>l = Lebar sisi balok</h4>
-                    <h4>t = Tinggi sisi balok</h4>
+                    <h4>p = Panjang balok</h4>
+                    <h4>l = Lebar balok</h4>
+                    <h4>t = Tinggi balok</h4>
                 `,
                 contohLuas: `
                     <p><strong>Soal:</strong> </p>
                     <p>Sebuah balok berukuran panjang 8 cm, lebar 5 cm, dan tinggi 4 cm. Hitunglah luas permukaannya!</p>
                     <p><strong>Penyelesaian:</strong></p>
                     <p>Diketahui: p = 8 cm, l = 5 cm, t = 4 cm</p>
-                    <p>L = 2 × (p×l + p×t + l×t)</p>
-                    <p>L = 2 × (8×5 + 8×4 + 5×4)</p>
-                    <p>L = 2 × (40 + 32 + 20)</p>
-                    <p>L = 2 × 92</p>
-                    <p><strong>L = 184 cm²</strong></p>
-                    <div class="video-placeholder">
+                    <p>LP = 2 × ((p×l) + (p×t) + (l×t))</p>
+                    <p>LP = 2 × ((8 cm×5 cm) + (8 cm×4 cm) + (5 cm×4 cm))</p>
+                    <p>LP = 2 × (40 cm² + 32 cm² + 20 cm²)</p>
+                    <p>LP = 2 × 92 cm²</p>
+                    <p><strong>LP = 184 cm²</strong></p>
+                    <div class="video-placeholder" style="margin-top: 20px;">
                         <video controls width="100%" height="300">
                             <source src="./Aset Video/Luas Balok.mp4" type="video/mp4">
                             Browser Anda tidak mendukung tag video.
@@ -742,16 +978,16 @@
                 `,
                 rumusVolume: `
                     <h4>Volume =  p×l×t</h4>
-                    <h4>p = Panjang sisi balok</h4>
-                    <h4>l = Lebar sisi balok</h4>
-                    <h4>t = Tinggi sisi balok</h4>
+                    <h4>p = Panjang balok</h4>
+                    <h4>l = Lebar balok</h4>
+                    <h4>t = Tinggi balok</h4>
                 `,
                 contohVolume: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Sebuah balok berukuran 6 cm × 4 cm × 3 cm. Hitunglah volumenya!</p>
+                    <p>Sebuah balok dengan panjang 6 cm, lebar 4 cm, dan tinggi 3 cm. Tentukan volume balok tersebut!</p>
                     <p><strong>Penyelesaian:</strong></p>
                     <p>V = p × l × t</p>
-                    <p>V = 6 × 4 × 3</p>
+                    <p>V = 6 cm × 4 cm × 3 cm</p>
                     <p><strong>V = 72 cm³</strong></p>
                     <div class="video-placeholder">
                         <video controls width="100%" height="300">
@@ -763,11 +999,14 @@
                 arNormal: "./Aset/Balok Normal.glb",
                 arTransparent: "./Aset/balok_transparan.glb",
                 gambar: "./Aset gambar/gambar_balok.png",
-                gambarJaring: "./Aset gambar/gambar_jaring_jaring_balok.jpeg",
+                gambarJaring: "./Aset gambar/gambar_jaring_jaring_balok_1.png",
+                gambarJaring2: "./Aset gambar/gambar_jaring_jaring_balok_2.png",
+                gambarJaring3: "./Aset gambar/gambar_jaring_jaring_balok_3.png",
+                gambarJaring4: "./Aset gambar/gambar_jaring_jaring_balok_4.png",
                 animasiJaring: "./Aset animasi/animasi jaring jaring balok.glb"
             },
             prisma: {
-                title: "Contoh Prisma Segitiga",
+                title: "Prisma Segi-n",
                 unsur: `
                     <div class="rumus-box">
                         <h4>Prisma segi-n memiliki unsur-unsur sebagai berikut:</h4>
@@ -779,35 +1018,57 @@
                     </div>
                 `,
                 rumusLuas: `
-                    <h4>Luas Permukaan = (2×Luas alas)+(keliling alas ×t)</h4>
+                    <h4>Luas Permukaan = (2 × Luas alas)+(keliling alas × tinggi prisma)</h4>
                 `,
                 contohLuas: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Prisma segitiga dengan alas 6 cm, tinggi segitiga 4 cm, dan tinggi prisma 10 cm. Hitung luas permukaan!</p>
+                    <p>Hitung luas permukaan dari prisma dibawah ini:</p>
+                    <div class="materi-image" style="margin: 15px auto;">
+                        <img src="./Aset gambar/gambar_prisma_luas.jpeg" alt="Gambar Prisma" style="max-width: 300px; height: auto; border-radius: 8px;">
+                    </div>
                     <p><strong>Penyelesaian:</strong></p>
-                    <p>Keliling alas = 6 + 5 + 5 = 16 cm (misal sisi miring 5 cm)</p>
-                    <p>L = (2 × 12) + (16 × 10)</p>
-                    <p>L = 24 + 160</p>
-                    <p><strong>L = 184 cm²</strong></p>
+                    <p>LP = (2 × Luas alas) + (Keliling alas × tinggi prisma)</p>
+                    <p>LP = (2 × Luas segitiga) + (Keliling segitiga × tinggi prisma)</p>
+                    <p>LP = (2 × (½ × alas × tinggi)) + (Keliling segitiga × tinggi prisma)</p>
+                    <p>LP = (2 × (½ × 6 cm × 8 cm)) + ((6 cm + 10 cm + 10 cm) × 15 cm)</p>
+                    <p>LP = (2 × 24 cm²) + (26 cm × 15 cm)</p>
+                    <p>LP = 48 cm² + 390 cm²</p>
+                    <p><strong>LP = 438 cm²</strong></p>
+                    <div class="video-placeholder" style="margin-top: 20px;">
+                        <p style="color: white;">Video Pembelajaran (Jika tersedia)</p>
+                    </div>
                 `,
                 rumusVolume: `
-                    <h4>Volume = Luas Alas × Tinggi</h4>
+                    <h4>Volume = Luas Alas × Tinggi Prisma</h4>
                 `,
                 contohVolume: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Prisma segitiga dengan alas 6 cm, tinggi segitiga 4 cm, tinggi prisma 10 cm. Hitung volume!</p>
-                    <p>V = (½ × 6 × 4) × 10</p>
-                    <p>V = 12 × 10</p>
+                    <p>Hitung volume dari prisma dibawah ini:</p>
+                    <div class="materi-image" style="margin: 15px auto;">
+                        <img src="./Aset gambar/gambar_prisma_volume.jpeg" alt="Gambar Prisma" style="max-width: 300px; height: auto; border-radius: 8px;">
+                    </div>
+                    <p><strong>Penyelesaian:</strong></p>
+                    <p>V = Luas Alas × Tinggi Prisma</p>
+                    <p>V = Luas segitiga × Tinggi Prisma</p>
+                    <p>V = (½ × alas × tinggi) × tinggi prisma</p>
+                    <p>V = (½ × 6 cm × 4 cm) × 10 cm</p>
+                    <p>V = 12 cm² × 10 cm</p>
                     <p><strong>V = 120 cm³</strong></p>
+                    <div class="video-placeholder">
+                        <p style="color: white;">Video Pembelajaran (Jika tersedia)</p>
+                    </div>
                 `,
                 arNormal: "./Aset/Prisma Normal.glb",
                 arTransparent: "./Aset/prisma segitiga transparan.glb",
-                gambar: "./Aset gambar/gambar_prisma.jpeg",
-                gambarJaring: "./Aset gambar/gambar_jaring_jaring_prisma.jpeg",
+                gambar: "./Aset gambar/gambar_prisma.png",
+                gambarJaring: "./Aset gambar/gambar_jaring_jaring_prisma_1.png",
+                gambarJaring2: "./Aset gambar/gambar_jaring_jaring_prisma_2.png",
+                gambarJaring3: "./Aset gambar/gambar_jaring_jaring_prisma_3.png",
+                gambarJaring4: "./Aset gambar/gambar_jaring_jaring_prisma_4.png",
                 animasiJaring: "./Aset animasi/animasi jaring jaring prisma.glb"
             },
             limas: {
-                title: "Contoh Limas Segiempat",
+                title: "Limas Segi-n",
                 unsur: `
                     <div class="rumus-box">
                         <h4>- Limas segi-n memiliki unsur-unsur sebagai berikut:</h4>
@@ -823,27 +1084,49 @@
                 `,
                 contohLuas: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Limas segiempat dengan alas 8 cm dan tinggi sisi tegak 6 cm. Hitung luas permukaan!</p>
-                    <p>L = 8² + 4 × (½ × 8 × 6)</p>
-                    <p>L = 64 + 4 × 24</p>
-                    <p>L = 64 + 96</p>
-                    <p><strong>L = 160 cm²</strong></p>
+                    <p>Hitunglah luas dari limas dibawah ini:</p>
+                    <div class="materi-image" style="margin: 15px auto;">
+                        <img src="./Aset gambar/gambar_limas_luas.jpeg" alt="Gambar Limas" style="max-width: 300px; height: auto; border-radius: 8px;">
+                    </div>
+                    <p><strong>Penyelesaian:</strong></p>
+                    <p>LP = Luas Alas + Jumlas Luas Sisi Tegak</p>
+                    <p>LP = Luas Persegi + (4 × Luas Segitiga)</p>
+                    <p>LP = (sisi × sisi) + (4 × (½ × alas × tinggi))</p>
+                    <p>LP = (8 cm)² + (4 × (½ × 8 cm × 12 cm))</p>
+                    <p>LP = 64 cm² + 4 × 48 cm²</p>
+                    <p>LP = 64 cm² + 192 cm²</p>
+                    <p><strong>LP = 256 cm²</strong></p>
+                    <div class="video-placeholder" style="margin-top: 20px;">
+                        <p style="color: white;">Video Pembelajaran (Jika tersedia)</p>
+                    </div>
                 `,
                 rumusVolume: `
                     <h4>Volume = ⅓ × Luas Alas × Tinggi</h4>
                 `,
                 contohVolume: `
                     <p><strong>Soal:</strong> </p>
-                    <p>Limas dengan alas 6 cm dan tinggi 9 cm. Hitung volume!</p>
-                    <p>V = ⅓ × 6² × 9</p>
-                    <p>V = ⅓ × 36 × 9</p>
-                    <p>V = ⅓ × 324</p>
-                    <p><strong>V = 108 cm³</strong></p>
+                    <p>Hitunglah volume dari limas dibawah ini:</p>
+                    <div class="materi-image" style="margin: 15px auto;">
+                        <img src="./Aset gambar/gambar_limas_volume.jpeg" alt="Gambar Limas" style="max-width: 300px; height: auto; border-radius: 8px;">
+                    </div>
+                    <p><strong>Penyelesaian:</strong></p>
+                    <p>V = ⅓ × Luas Alas × Tinggi limas</p>
+                    <p>V = ⅓ × (sisi × sisi) × tinggi limas</p>
+                    <p>V = ⅓ × (8 cm)² × 15 cm</p>
+                    <p>V = ⅓ × 64 cm² × 15 cm</p>
+                    <p>V = ⅓ × 960 cm³</p>
+                    <p><strong>V = 320 cm³</strong></p>
+                    <div class="video-placeholder">
+                        <p style="color: white;">Video Pembelajaran (Jika tersedia)</p>
+                    </div>
                 `,
                 arNormal: "./Aset/Limas Normal.glb",
                 arTransparent: "./Aset/limas segiempat transparan.glb",
-                gambar: "./Aset gambar/gambar_limas.jpeg",
-                gambarJaring: "./Aset gambar/gambar_jaring_jaring_limas.jpeg",
+                gambar: "./Aset gambar/gambar_limas.png",
+                gambarJaring: "./Aset gambar/gambar_jaring_jaring_limas_1.png",
+                gambarJaring2: "./Aset gambar/gambar_jaring_jaring_limas_2.png",
+                gambarJaring3: "./Aset gambar/gambar_jaring_jaring_limas_3.png",
+                gambarJaring4: "./Aset gambar/gambar_jaring_jaring_limas_4.png",
                 animasiJaring: "./Aset animasi/animasi jaring jaring limas.glb"
             },
             };
@@ -1001,7 +1284,16 @@
             if (data.gambar) {
                 const gambarDiv = document.getElementById('gambar-bentuk');
                 if (gambarDiv) {
-                    gambarDiv.innerHTML = `<img src="${data.gambar}" alt="Gambar ${data.title}" style="max-width: 300px; height: auto; border-radius: 8px;">`;
+                    let gambarHTML = `<img src="${data.gambar}" alt="Gambar ${data.title}" style="max-width: 300px; height: auto; border-radius: 8px;">`;
+                    
+                    // Tambahkan paragraf untuk prisma dan limas
+                    if (currentBangun === 'prisma') {
+                        gambarHTML += `<p style="margin-top: 15px; font-weight: bold; color: #667eea;">Contoh : Prisma Segitiga</p>`;
+                    } else if (currentBangun === 'limas') {
+                        gambarHTML += `<p style="margin-top: 15px; font-weight: bold; color: #667eea;">Contoh : Limas Segiempat</p>`;
+                    }
+                    
+                    gambarDiv.innerHTML = gambarHTML;
                 }
             }
             
@@ -1010,6 +1302,30 @@
                 const gambarJaringDiv = document.getElementById('gambar-jaring');
                 if (gambarJaringDiv) {
                     gambarJaringDiv.innerHTML = `<img src="${data.gambarJaring}" alt="Jaring-jaring ${data.title}" style="max-width: 300px; height: auto; border-radius: 8px;">`;
+                }
+            }
+            
+            // Tampilkan gambar jaring-jaring 2
+            if (data.gambarJaring2) {
+                const gambarJaring2Div = document.getElementById('gambar-jaring2');
+                if (gambarJaring2Div) {
+                    gambarJaring2Div.innerHTML = `<img src="${data.gambarJaring2}" alt="Jaring-jaring 2 ${data.title}" style="max-width: 300px; height: auto; border-radius: 8px;">`;
+                }
+            }
+            
+            // Tampilkan gambar jaring-jaring 3
+            if (data.gambarJaring3) {
+                const gambarJaring3Div = document.getElementById('gambar-jaring3');
+                if (gambarJaring3Div) {
+                    gambarJaring3Div.innerHTML = `<img src="${data.gambarJaring3}" alt="Jaring-jaring 3 ${data.title}" style="max-width: 300px; height: auto; border-radius: 8px;">`;
+                }
+            }
+            
+            // Tampilkan gambar jaring-jaring 4
+            if (data.gambarJaring4) {
+                const gambarJaring4Div = document.getElementById('gambar-jaring4');
+                if (gambarJaring4Div) {
+                    gambarJaring4Div.innerHTML = `<img src="${data.gambarJaring4}" alt="Jaring-jaring 4 ${data.title}" style="max-width: 300px; height: auto; border-radius: 8px;">`;
                 }
             }
             
