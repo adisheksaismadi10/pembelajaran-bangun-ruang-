@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran 3D Bangun Ruang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5e6d3;
+            color: #333;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ── Background Decorations (sama persis dengan proyek asli) ── */
+        .bg-decorations {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .decoration { position: absolute; opacity: 0.6; }
+
+        .pencil-left {
+            top: 10%; left: 2%;
+            width: 80px; height: 300px;
+            background: linear-gradient(to bottom, #FFD700 0%, #FFD700 70%, #8B4513 70%, #8B4513 85%, #333 85%);
+            border-radius: 5px;
+            transform: rotate(-15deg);
+        }
+
+        .ruler-right {
+            top: 15%; right: 3%;
+            width: 60px; height: 250px;
+            background: linear-gradient(to right, #FF6B6B 0%, #FF6B6B 50%, #FFA07A 50%);
+            border: 2px solid #333;
+            transform: rotate(20deg);
+        }
+
+        .book-left {
+            bottom: 15%; left: 1%;
+            width: 100px; height: 80px;
+            background: #4ECDC4;
+            border: 3px solid #333;
+            border-radius: 5px;
+            transform: rotate(-10deg);
+        }
+
+        .calculator-right {
+            bottom: 20%; right: 2%;
+            width: 90px; height: 120px;
+            background: #95E1D3;
+            border: 3px solid #333;
+            border-radius: 8px;
+            transform: rotate(15deg);
+        }
+
+        .eraser-top {
+            top: 40%; left: 5%;
+            width: 70px; height: 40px;
+            background: #FF69B4;
+            border-radius: 5px;
+            transform: rotate(-25deg);
+        }
+
+        .compass-top {
+            top: 50%; right: 5%;
+            width: 60px; height: 100px;
+            border-left: 3px solid #666;
+            border-right: 3px solid #666;
+            transform: rotate(30deg);
+        }
+
+        /* ── Centered Landing Wrapper ── */
+        .landing-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .landing-card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 30px;
+            padding: 50px 40px 55px;
+            text-align: center;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+            border: 3px solid #e8d5b7;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        /* ── Logo Row ── */
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            margin-bottom: 30px;
+        }
+
+        .logo-row img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid #e8d5b7;
+            padding: 6px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .logo-divider {
+            width: 2px;
+            height: 70px;
+            background: linear-gradient(to bottom, transparent, #c9b99a, transparent);
+        }
+
+        /* ── Selamat Datang ── */
+        .welcome-heading {
+            font-size: 2.6rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            text-shadow: none;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .welcome-subtitle {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.35s both;
+        }
+
+        /* ── Button Group ── */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 28px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.13);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ripple layer */
+        .nav-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.18);
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: inherit;
+        }
+
+        .nav-btn:hover::after { opacity: 1; }
+
+        /* Tombol 1 — Halaman Utama */
+        .btn-home {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(102, 126, 234, 0.45);
+        }
+
+        .btn-home:active { transform: scale(0.97); }
+
+        /* Tombol 2 — How to Use */
+        .btn-howto {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #333;
+        }
+
+        .btn-howto:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(255, 165, 0, 0.45);
+        }
+
+        .btn-howto:active { transform: scale(0.97); }
+
+        /* Tombol 3 — Profil Pengembang */
+        .btn-profil {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: #fff;
+        }
+
+        .btn-profil:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(255, 107, 107, 0.45);
+        }
+
+        .btn-profil:active { transform: scale(0.97); }
+
+        /* Ikon tombol (CSS shape) */
+        .btn-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        /* ── Animasi ── */
+        @keyframes slideDown {
+            from { transform: translateY(-40px); opacity: 0; }
+            to   { transform: translateY(0);     opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to   { transform: translateY(0);    opacity: 1; }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .landing-card {
+                padding: 36px 22px 42px;
+            }
+
+            .welcome-heading {
+                font-size: 2rem;
+            }
+
+            .logo-row img {
+                width: 72px;
+                height: 72px;
+            }
+
+            .nav-btn {
+                font-size: 1rem;
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Decorations (konsisten dengan halaman utama) -->
+    <div class="bg-decorations">
+        <div class="decoration pencil-left"></div>
+        <div class="decoration ruler-right"></div>
+        <div class="decoration book-left"></div>
+        <div class="decoration calculator-right"></div>
+        <div class="decoration eraser-top"></div>
+        <div class="decoration compass-top"></div>
+    </div>
+
+    <!-- Landing Card -->
+    <div class="landing-wrapper">
+        <div class="landing-card">
+
+            <!-- 1. Dua Logo Berdampingan -->
+            <div class="logo-row">
+                <img src="./Aset gambar/logo-umj.png" alt="Logo UMJ">
+                <div class="logo-divider"></div>
+                <img src="./Aset gambar/logo-fip-umj.png" alt="Logo FIP UMJ">
+            </div>
+
+            <!-- 2. Teks Selamat Datang -->
+            <h1 class="welcome-heading">Selamat Datang</h1>
+            <p class="welcome-subtitle">Media Pembelajaran 3D Bangun Ruang &mdash; SMP</p>
+
+            <!-- 3. Tiga Tombol Utama -->
+            <div class="btn-group">
+
+                <button class="nav-btn btn-home" onclick="goTo('home')">
+                    <!-- Ikon rumah (SVG inline) -->
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
+                        <path d="M9 21V12h6v9"/>
+                    </svg>
+                    Halaman Utama
+                </button>
+
+                <button class="nav-btn btn-howto" onclick="goTo('howto')">
+                    <!-- Ikon buku -->
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    How to Use
+                </button>
+
+                <button class="nav-btn btn-profil" onclick="goTo('profil')">
+                    <!-- Ikon user -->
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                    </svg>
+                    Profil Pengembang
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Fungsi navigasi — sesuaikan target sesuai struktur proyek.
+         * Contoh: jika semua halaman ada di file yang sama, ganti dengan showPage().
+         */
+        function goTo(target) {
+            const routes = {
+                home:   'Tugas-Mba-Tiara-selesai02.html#home-page',
+                howto:  'howto-page-bangun-ruang (1).html',
+                profil: 'profil-pengembang-snippet.html'
+            };
+            if (routes[target]) {
+                window.location.href = routes[target];
+            }
+        }
+    </script>
+
+</body>
+</html>
